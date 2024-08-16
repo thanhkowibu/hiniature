@@ -36,11 +36,14 @@ function App() {
     <>
       <div className="h-svh flex flex-col items-center justify-center bg-yellow-200 cursor-none overflow-hidden">
         <motion.div
-          className="absolute cursor-none top-0 left-0 h-28 pointer-events-none z-10 overflow-hidden"
+          className="absolute cursor-none top-0 left-0 h-28 pointer-events-none z-10 overflow-hidden select-none focus:border-none"
           variants={variants}
           animate="default"
         >
-          <img src="/hand.png" className="size-full object-cover -rotate-6 " />
+          <img
+            src="/hand.png"
+            className="size-full object-cover -rotate-6 select-none"
+          />
         </motion.div>
         <h1 className="text-4xl font-semibold tracking-wide">Pat the Hina</h1>
         <h1 className="text-5xl font-semibold tracking-wide rotate-90">➨</h1>
