@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { easeIn, easeInOut, easeOut, motion } from "framer-motion";
 
 function App() {
   const [source, setSource] = useState("/hiniature1.png");
@@ -26,20 +26,21 @@ function App() {
 
   const variants = {
     default: {
-      x: mousePosition.x - 220,
-      y: mousePosition.y - 50,
+      x: Math.min(mousePosition.x - 220, window.innerWidth - 220),
+      y: Math.min(mousePosition.y - 50, window.innerHeight - 50),
     },
+    easeInOut,
   };
 
   return (
     <>
-      <div className="h-svh flex flex-col items-center justify-center bg-yellow-200 cursor-none">
+      <div className="h-svh flex flex-col items-center justify-center bg-yellow-200 cursor-none overflow-hidden">
         <motion.div
           className="absolute cursor-none top-0 left-0 h-28 pointer-events-none z-10 overflow-hidden"
           variants={variants}
           animate="default"
         >
-          <img src="/hand.png" className="size-full object-cover" />
+          <img src="/hand.png" className="size-full object-cover -rotate-6 " />
         </motion.div>
         <h1 className="text-4xl font-semibold tracking-wide">Pat the Hina</h1>
         <h1 className="text-5xl font-semibold tracking-wide rotate-90">➨</h1>

@@ -2,15 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.custom-cursor {
-  cursor: url("/hand.png"), auto;
-}
-.custom-cursor img {
-  pointer-events: auto;
-}
-.custom-cursor-img {
-  position: absolute;
-  pointer-events: none; /* Ensure it doesn't block interactions */
-  transform: translate(-50%, -50%); /* Center the cursor image */
-  z-index: 1000; /* Ensure it is on top of other elements */
+html,
+body {
+  overflow: hidden;
 }
